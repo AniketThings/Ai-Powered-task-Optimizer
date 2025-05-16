@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Facial Emotion Recognition</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; background: #f4f4f4; }
+        h2 { margin-top: 20px; }
+        img { border: 3px solid black; width: 640px; height: 480px; }
+    </style>
+</head>
+<body>
+    <h2>Real-Time Facial Emotion Detection</h2>
+    <img id="videoFeed" src="{{ url_for('video_feed') }}">
+    <p id="status">Webcam Running...</p>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById("videoFeed").src = "";
+            document.getElementById("status").innerText = "Webcam Stopped After 40 Seconds!";
+            alert("Webcam has been stopped after 40 seconds.");
+        }, 40000);
+    </script>
+</body>
+</html>
+
